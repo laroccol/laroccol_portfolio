@@ -1,18 +1,15 @@
+import React from 'react'
 import {
     Flex,
     Heading,
     Center,
     Container,
-    Image,
-    Box,
     Stack,
     Text,
     Link,
     Icon
 } from '@chakra-ui/react'
-import React from 'react'
 import ScrollTransition from '../common/scrollTransition'
-import Header from '../nav/header'
 import { AiFillGithub } from 'react-icons/ai'
 
 interface ProjectCardProps {

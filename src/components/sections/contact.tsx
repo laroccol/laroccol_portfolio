@@ -27,18 +27,18 @@ export default function Contact() {
 
     const [buttonText, setButtonText] = React.useState<string>('Send')
 
-    const resetForm = () => {
-        setName('')
-        setEmail('')
-        setMessage('')
+    // const resetForm = () => {
+    //     setName('')
+    //     setEmail('')
+    //     setMessage('')
 
-        setNameError(false)
-        setEmailError(false)
-        setMessageError(false)
-        setSendError(false)
+    //     setNameError(false)
+    //     setEmailError(false)
+    //     setMessageError(false)
+    //     setSendError(false)
 
-        setButtonText('Send')
-    }
+    //     setButtonText('Send')
+    // }
 
     const HandleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>

@@ -1,23 +1,11 @@
 import React from 'react'
 
 import {
-    ChakraProvider,
     Box,
-    Text,
-    Link,
     Grid,
-    extendTheme,
-    type ThemeConfig,
-    Flex,
-    Icon,
-    Button,
     GridItem,
-    Center,
-    Divider,
     Heading,
-    useColorMode,
-    useColorModeValue,
-    color
+    useColorModeValue
 } from '@chakra-ui/react'
 import Header from './components/nav/header'
 import Main from './components/sections/main'
@@ -26,7 +14,6 @@ import Socials from './components/nav/socials'
 import About from './components/sections/about'
 import Projects from './components/sections/projects'
 import Contact from './components/sections/contact'
-import { mode } from '@chakra-ui/theme-tools'
 
 export default function Page() {
     return (

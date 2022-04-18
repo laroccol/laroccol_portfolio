@@ -1,16 +1,6 @@
 import React from 'react'
-import {
-    Heading,
-    Box,
-    SlideFade,
-    Stack,
-    Text,
-    Flex,
-    Button,
-    Link
-} from '@chakra-ui/react'
+import { Heading, Box, Text, Button, Link } from '@chakra-ui/react'
 import ScrollTransition from '../common/scrollTransition'
-import SnakeGame from '../snake/SnakeGame'
 
 const Main: React.FC = () => {
     return (
