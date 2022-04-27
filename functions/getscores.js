@@ -18,6 +18,7 @@ exports.handler = async (event, context) => {
 }
 
 async function getScores(amount) {
+    console.log(process.env.MDBAP)
     const uri = `mongodb+srv://admin:${process.env.MDBAP}@cluster0.vwg22.mongodb.net/portfolio?retryWrites=true&w=majority`
     await mongoose.connect(uri)
 
