@@ -17,8 +17,19 @@ import ScrollTransition from '../common/scrollTransition'
 import ScrollImage from '../common/scrollImage'
 import { AiFillHome } from 'react-icons/ai'
 import { IoIosSchool, IoMdBriefcase } from 'react-icons/io'
-import { SiJavascript } from 'react-icons/si'
+import {
+    SiGithub,
+    SiHtml5,
+    SiJavascript,
+    SiMongodb,
+    SiNodeDotJs,
+    SiPostgresql,
+    SiReact
+} from 'react-icons/si'
 import { GiGolfFlag } from 'react-icons/gi'
+import { BsController } from 'react-icons/bs'
+import { BiRun } from 'react-icons/bi'
+import { CgPiano } from 'react-icons/cg'
 
 const AboutCard = ({
     color,
@@ -166,32 +177,24 @@ export default function About() {
                                 <Skill
                                     name="Node"
                                     value={85}
-                                    icon={SiJavascript}
+                                    icon={SiNodeDotJs}
                                 />
-                                <Skill
-                                    name="React"
-                                    value={80}
-                                    icon={SiJavascript}
-                                />
-                                <Skill
-                                    name="Git"
-                                    value={80}
-                                    icon={SiJavascript}
-                                />
+                                <Skill name="React" value={80} icon={SiReact} />
+                                <Skill name="Git" value={80} icon={SiGithub} />
                                 <Skill
                                     name="HTML, CSS"
                                     value={70}
-                                    icon={SiJavascript}
+                                    icon={SiHtml5}
                                 />
                                 <Skill
                                     name="SQL"
                                     value={60}
-                                    icon={SiJavascript}
+                                    icon={SiPostgresql}
                                 />
                                 <Skill
                                     name="NoSQL"
                                     value={60}
-                                    icon={SiJavascript}
+                                    icon={SiMongodb}
                                 />
                             </AboutCard>
                             <AboutCard
@@ -216,19 +219,19 @@ export default function About() {
                                     <Text fontSize={16}>Golf</Text>
                                     <Text fontSize={12}>6 Handicap</Text>
                                 </span>
-                                <Icon as={IoIosSchool} boxSize={5} />
+                                <Icon as={BsController} boxSize={5} />
                                 <span>
                                     <Text fontSize={16}>
                                         Competitive Esports
                                     </Text>
                                     <Text fontSize={12}>Top 1%</Text>
                                 </span>
-                                <Icon as={IoMdBriefcase} boxSize={5} />
+                                <Icon as={BiRun} boxSize={5} />
                                 <span>
                                     <Text fontSize={16}>Running</Text>
                                     <Text fontSize={12}>Half Marathon</Text>
                                 </span>
-                                <Icon as={IoMdBriefcase} boxSize={5} />
+                                <Icon as={CgPiano} boxSize={5} />
                                 <span>
                                     <Text fontSize={16}>Piano</Text>
                                     <Text fontSize={12}>
