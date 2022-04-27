@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
             port: 587,
             auth: {
                 user: 'lucas.larocco@gmail.com',
-                pass: 'sew?Wiz3cut'
+                pass: process.env.GP
             }
         })
 
