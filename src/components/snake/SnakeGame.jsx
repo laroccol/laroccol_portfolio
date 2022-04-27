@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import './SnakeGame.css'
 import {
     Table,
@@ -56,15 +57,23 @@ class SnakeGame extends React.Component {
             appleColor: this.props.appleColor || this.getRandomColor(),
             score: 0,
             highScore: Number(localStorage.getItem('snakeHighScore')) || 0,
-            newHighScore: false
+            newHighScore: false,
+            leaderboard: []
         }
     }
 
     componentDidMount() {
         this.initGame()
+        this.updateLeaderboard()
         window.addEventListener('keydown', this.handleKeyDown)
         window.addEventListener('resize', this.initGame.bind(this))
         this.gameLoop()
+    }
+
+    updateLeaderboard() {
+        axios.get('/api/getscores').then(({ data }) => {
+            this.setState({ leaderboard: data.results })
+        })
     }
 
     initGame() {
@@ -330,7 +339,8 @@ class SnakeGame extends React.Component {
     }
 
     handleKeyDown(event) {
-        if (this.state.isGameOver && event.keyCode === 32) {
+        console.log(event.keyCode)
+        if (this.state.isGameOver && event.keyCode === 27) {
             event.preventDefault()
             this.resetGame()
             return
@@ -395,6 +405,13 @@ class SnakeGame extends React.Component {
 
             localStorage.setItem('snakeHighScore', this.state.score)
 
+            axios
+                .post('/api/submitscore', {
+                    name: 'sloth',
+                    score: 5
+                })
+                .catch((err) => console.error(err))
+
             this.setState({
                 isGameOver: false,
                 highScore: this.state.score
@@ -449,7 +466,16 @@ class SnakeGame extends React.Component {
                             </Tr>
                         </Thead>
                         <Tbody>
-                            <Tr>
+                            {this.state.leaderboard.map(
+                                ({ name, score }, index) => (
+                                    <Tr key={`${name}_${score}_${index}`}>
+                                        <Td>{index + 1}</Td>
+                                        <Td>{name}</Td>
+                                        <Td isNumeric>{score}</Td>
+                                    </Tr>
+                                )
+                            )}
+                            {/* <Tr>
                                 <Td>1</Td>
                                 <Td>Facebook</Td>
                                 <Td isNumeric>35</Td>
@@ -473,7 +499,7 @@ class SnakeGame extends React.Component {
                                 <Td>5</Td>
                                 <Td>Google</Td>
                                 <Td isNumeric>28</Td>
-                            </Tr>
+                            </Tr> */}
                         </Tbody>
                     </Table>
                 </TableContainer>
@@ -518,7 +544,7 @@ class SnakeGame extends React.Component {
                                     </Button>
                                 </FormControl>
 
-                                <Text fontSize={12}>Press Space to Skip</Text>
+                                <Text fontSize={12}>Press Esc to Skip</Text>
                             </AlertDialogBody>
                             <AlertDialogFooter></AlertDialogFooter>
                         </AlertDialogContent>

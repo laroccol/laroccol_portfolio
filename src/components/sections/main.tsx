@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import { Heading, Box, Text, Button, Link } from '@chakra-ui/react'
 import ScrollTransition from '../common/scrollTransition'
 
@@ -38,11 +39,10 @@ const Main: React.FC = () => {
                 </ScrollTransition>
                 <ScrollTransition delay={0.4}>
                     <Text width="70%" py={5}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
+                        I am a web developer specializing in javascript
+                        (typescript) and react. I enjoy creating experiences
+                        that impress people and make their life better. Right
+                        now, I am looking for a full time position.
                     </Text>
                     <Link
                         href="#projects_section"

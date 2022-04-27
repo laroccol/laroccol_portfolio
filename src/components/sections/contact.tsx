@@ -74,12 +74,13 @@ export default function Contact() {
         setButtonText('Sending...')
 
         axios
-            .post('http://localhost:57713/.netlify/functions/sendmail', {
+            .post('/api/sendmail', {
                 name: name,
                 email: email,
                 message: message
             })
             .then((res) => {
+                console.log(res.data)
                 if (res.data.result !== 'success') {
                     setSendError(true)
                     setSendSuccess(false)
@@ -127,7 +128,7 @@ export default function Contact() {
                     for further assistance
                 </Alert>
                 <Alert
-                    status="error"
+                    status="success"
                     display={sendSuccess ? 'inherit' : 'none'}
                 >
                     <AlertIcon />

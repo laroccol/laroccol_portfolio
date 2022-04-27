@@ -18,6 +18,7 @@ interface ProjectCardProps {
     description: string
     technologies: string
     github: string
+    link?: string
 }
 
 const ProjectCard = ({
@@ -25,7 +26,8 @@ const ProjectCard = ({
     heading,
     description,
     technologies,
-    github
+    github,
+    link
 }: ProjectCardProps) => {
     return (
         <>
@@ -84,8 +86,24 @@ const ProjectCard = ({
                     </Heading>
                     <Text fontSize="16">{technologies}</Text>
                     <Stack position="absolute" bottom={10} alignItems="center">
-                        <Icon as={AiFillGithub} boxSize={7} />
-                        <Link href="#">{github}</Link>
+                        {link ? (
+                            <Link
+                                variant="highlight"
+                                href={link}
+                                target="_blank"
+                                color="yellow.100"
+                            >
+                                Live Link
+                            </Link>
+                        ) : null}
+                        <Link
+                            variant="highlight"
+                            href={github}
+                            target="_blank"
+                            color="highlight.100"
+                        >
+                            Github
+                        </Link>
                     </Stack>
                 </Stack>
             </ScrollTransition>
@@ -118,42 +136,44 @@ export default function Projects() {
                     heading="TYPEO"
                     description="Competitive Online Typing Website"
                     technologies="React, Node.js, Typescript, Firebase, PostgreSQL"
-                    github="github.com"
+                    github="https://github.com/laroccol/typeo"
+                    link="#"
                 ></ProjectCard>
                 <ProjectCard
                     image="projectManager.jpg"
-                    heading="Task Manager"
+                    heading="PROJECT MANAGER"
                     description="Project Management and Workflow tool"
                     technologies="Next.js, Node.js"
-                    github="github.com"
+                    github="https://github.com/laroccol/ProjectManager"
+                    link="#"
                 ></ProjectCard>
                 <ProjectCard
                     image="droneRace.jpg"
                     heading="DRONE LINK"
-                    description="All-In-One Drone Race Manager and Tracker"
+                    description="Drone Race Manager and Tracker"
                     technologies="React, Node.js, RethinkDB, MQTT"
-                    github="github.com"
+                    github="https://github.com/laroccol/drone-link"
                 ></ProjectCard>
                 <ProjectCard
                     image="msoeEsports.jpg"
                     heading="ESPORTS BOT"
                     description="Esports Challenge and Progression Tracking System"
                     technologies="Discord.js, MongoDB"
-                    github="github.com"
+                    github="https://github.com/laroccol/RLChallengeBot"
                 ></ProjectCard>
                 <ProjectCard
                     image="nn.jpg"
-                    heading="NBA Predictor"
-                    description="Machine Learning Neural Network That Predicts The Outcome of NBA Games"
+                    heading="NBA PREDICTOR"
+                    description="Machine Learning Neural Network"
                     technologies="Matlab"
-                    github="github.com"
+                    github="https://github.com/laroccol/NBAnn"
                 ></ProjectCard>
                 <ProjectCard
                     image="ue4.jpg"
-                    heading="FPS Game"
+                    heading="FPS GAME"
                     description="Multiplayer First Person Shooter Video Game"
                     technologies="Unreal Engine 4"
-                    github="github.com"
+                    github="https://github.com/laroccol/LukeGame"
                 ></ProjectCard>
                 <ScrollTransition>
                     <Center
