@@ -76,7 +76,11 @@ export default function Page() {
                 )}
                 id="projects_section"
             >
-                <GridItem colSpan={1} pt={150}>
+                <GridItem
+                    colSpan={1}
+                    pt={150}
+                    display={{ base: 'none', md: 'block' }}
+                >
                     <Heading
                         p={5}
                         borderLeft={{ base: 'none', md: '1px solid' }}
@@ -84,7 +88,6 @@ export default function Page() {
                             base: 'highlight.300',
                             md: 'highlight.300'
                         }}
-                        display={{ base: 'none', md: 'block' }}
                         sx={{
                             writingMode: 'vertical-rl',
                             transform: 'rotate(180deg)',
@@ -94,7 +97,7 @@ export default function Page() {
                         PROJECTS
                     </Heading>
                 </GridItem>
-                <GridItem colSpan={6}>
+                <GridItem colSpan={{ base: 8, md: 6 }}>
                     <Projects />
                 </GridItem>
             </Grid>

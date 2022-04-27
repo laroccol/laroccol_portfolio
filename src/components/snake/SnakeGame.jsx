@@ -95,9 +95,9 @@ class SnakeGame extends React.Component {
         // snake initialization
         let startSnakeSize = 6
         let snake = []
-        let Xpos = width / 2
+        let Xpos = blockWidth * 20
         let Ypos = blockHeight * 4
-        let snakeHead = { Xpos: width / 2, Ypos: blockHeight * 4 }
+        let snakeHead = { Xpos: blockWidth * 20, Ypos: blockHeight * 4 }
         snake.push(snakeHead)
         for (let i = 1; i < startSnakeSize; i++) {
             Xpos -= blockWidth
@@ -106,8 +106,12 @@ class SnakeGame extends React.Component {
         }
 
         // apple position initialization
-        let appleXpos = width - blockWidth * 6
-        let appleYpos = blockHeight * 15
+        let appleXpos =
+            Math.floor(0.8 * ((width - blockWidth) / blockWidth + 1)) *
+            blockWidth
+        let appleYpos =
+            Math.floor(0.8 * ((height - blockHeight) / blockHeight + 1)) *
+            blockHeight
 
         this.setState({
             width,
@@ -143,15 +147,16 @@ class SnakeGame extends React.Component {
 
     resetGame() {
         let width = this.state.width
+        let height = this.state.height
         let blockWidth = this.state.blockWidth
         let blockHeight = this.state.blockHeight
         let apple = this.state.apple
 
         // snake reset
         let snake = []
-        let Xpos = width / 2
+        let Xpos = blockWidth * 20
         let Ypos = blockHeight * 4
-        let snakeHead = { Xpos: width / 2, Ypos: blockHeight * 4 }
+        let snakeHead = { Xpos: blockWidth * 20, Ypos: blockHeight * 4 }
         snake.push(snakeHead)
         for (let i = 1; i < this.state.startSnakeSize; i++) {
             Xpos -= blockWidth
@@ -160,8 +165,12 @@ class SnakeGame extends React.Component {
         }
 
         // apple position reset
-        apple.Xpos = width - blockWidth * 6
-        apple.Ypos = blockHeight * 10
+        apple.Xpos =
+            Math.floor(0.8 * ((width - blockWidth) / blockWidth + 1)) *
+            blockWidth
+        apple.Ypos =
+            Math.floor(0.8 * ((height - blockHeight) / blockHeight + 1)) *
+            blockHeight
 
         this.setState({
             snake,
@@ -508,6 +517,9 @@ class SnakeGame extends React.Component {
                         this.state.isGameOver &&
                         this.state.score > this.state.highScore
                     }
+                    onClose={() => {
+                        this.resetGame()
+                    }}
                 >
                     <AlertDialogOverlay>
                         <AlertDialogContent>
