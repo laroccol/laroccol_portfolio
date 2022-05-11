@@ -71,7 +71,7 @@ export default function Header() {
                 </Center>
                 <Link
                     display={{ base: 'none', md: 'block' }}
-                    href="lucasLaRoccoResume.pdf"
+                    href="LaRoccoLucasResume.pdf"
                     variant="highlight"
                     target="_blank"
                 >
