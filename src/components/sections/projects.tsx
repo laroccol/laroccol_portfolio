@@ -18,6 +18,7 @@ interface ProjectCardProps {
     description: string
     technologies: string
     github: string
+    github2?: string
     link?: string
 }
 
@@ -27,6 +28,7 @@ const ProjectCard = ({
     description,
     technologies,
     github,
+    github2,
     link
 }: ProjectCardProps) => {
     return (
@@ -96,14 +98,31 @@ const ProjectCard = ({
                                 Live Link
                             </Link>
                         ) : null}
-                        <Link
-                            variant="highlight"
-                            href={github}
-                            target="_blank"
-                            color="highlight.100"
-                        >
-                            Github
-                        </Link>
+                        {github === 'Coming Soon' ? (
+                            <Text>Coming Soon</Text>
+                        ) : (
+                            <Link
+                                variant="highlight"
+                                href={github}
+                                target="_blank"
+                                color="highlight.100"
+                            >
+                                {github ===
+                                'https://github.com/laroccol/typeoAPI'
+                                    ? 'Server Github'
+                                    : 'Github'}
+                            </Link>
+                        )}
+                        {github2 ? (
+                            <Link
+                                variant="highlight"
+                                href={github}
+                                target="_blank"
+                                color="highlight.100"
+                            >
+                                Client Github
+                            </Link>
+                        ) : null}
                     </Stack>
                 </Stack>
             </ScrollTransition>
@@ -136,16 +155,9 @@ export default function Projects() {
                     heading="TYPEO"
                     description="Competitive Online Typing Website"
                     technologies="React, Node.js, Typescript, Firebase, PostgreSQL"
-                    github="https://github.com/laroccol/typeo"
-                    link="#"
-                ></ProjectCard>
-                <ProjectCard
-                    image="projectManager.jpg"
-                    heading="PROJECT MANAGER"
-                    description="Project Management and Workflow tool"
-                    technologies="Next.js, Node.js"
-                    github="https://github.com/laroccol/ProjectManager"
-                    link="#"
+                    github="https://github.com/laroccol/typeoAPI"
+                    github2="https://github.com/laroccol/typeoClient"
+                    link="https://www.typeo.io"
                 ></ProjectCard>
                 <ProjectCard
                     image="droneRace.jpg"
@@ -174,6 +186,13 @@ export default function Projects() {
                     description="Multiplayer First Person Shooter Video Game"
                     technologies="Unreal Engine 4"
                     github="https://github.com/laroccol/LukeGame"
+                ></ProjectCard>
+                <ProjectCard
+                    image="projectManager.jpg"
+                    heading="PROJECT MANAGER"
+                    description="Project Management and Workflow tool"
+                    technologies="Next.js, Node.js"
+                    github="Coming Soon"
                 ></ProjectCard>
                 <ScrollTransition>
                     <Center
