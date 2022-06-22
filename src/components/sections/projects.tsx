@@ -107,10 +107,7 @@ const ProjectCard = ({
                                 target="_blank"
                                 color="highlight.100"
                             >
-                                {github ===
-                                'https://github.com/laroccol/typeoAPI'
-                                    ? 'Server Github'
-                                    : 'Github'}
+                                Github
                             </Link>
                         )}
                         {github2 ? (
@@ -154,9 +151,8 @@ export default function Projects() {
                     image="typeo.PNG"
                     heading="TYPEO"
                     description="Competitive Online Typing Website"
-                    technologies="React, Node.js, Typescript, Firebase, PostgreSQL"
-                    github="https://github.com/laroccol/typeoAPI"
-                    github2="https://github.com/laroccol/typeoClient"
+                    technologies="React, Node.js, Typescript, Firebase"
+                    github="https://github.com/laroccol/typeo"
                     link="https://www.typeo.io"
                 ></ProjectCard>
                 <ProjectCard
