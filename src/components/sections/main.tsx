@@ -34,15 +34,15 @@ const Main: React.FC = () => {
                 </ScrollTransition>
                 <ScrollTransition delay={0.25}>
                     <Heading color="highlight.300">
-                        Full-Stack Web Developer
+                        Full-Stack Developer
                     </Heading>
                 </ScrollTransition>
                 <ScrollTransition delay={0.4}>
                     <Text width="70%" py={5}>
-                        I am a web developer specializing in javascript
-                        (typescript) and react. I enjoy creating experiences
-                        that impress people and make their life better. Right
-                        now, I am looking for a full time position.
+                        I am a full-time developer specializing in typescript
+                        and react. I enjoy creating experiences that impress
+                        people and make their life better. Right now, I am
+                        looking for a full time position.
                     </Text>
                     <Link
                         href="#projects_section"

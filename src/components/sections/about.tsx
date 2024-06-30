@@ -153,7 +153,7 @@ export default function About() {
                                 </span>
                                 <Icon as={IoMdBriefcase} boxSize={5} />
                                 <Text fontSize={16}>
-                                    Looking For First Web Development Job
+                                    Currently looking for a full-time position
                                 </Text>
                             </AboutCard>
                             <AboutCard
@@ -170,32 +170,30 @@ export default function About() {
                                     SKILLS
                                 </Heading>
                                 <Skill
-                                    name="Javascript, Typescript"
+                                    name="Typescript"
                                     value={90}
                                     icon={SiJavascript}
                                 />
-                                <Skill
-                                    name="Node"
-                                    value={85}
-                                    icon={SiNodeDotJs}
-                                />
-                                <Skill name="React" value={80} icon={SiReact} />
+                                <Skill name="React" value={90} icon={SiReact} />
                                 <Skill name="Git" value={80} icon={SiGithub} />
                                 <Skill
                                     name="HTML, CSS"
-                                    value={70}
+                                    value={80}
                                     icon={SiHtml5}
                                 />
                                 <Skill
                                     name="SQL"
-                                    value={60}
+                                    value={80}
                                     icon={SiPostgresql}
                                 />
                                 <Skill
                                     name="NoSQL"
-                                    value={60}
+                                    value={75}
                                     icon={SiMongodb}
                                 />
+                                <Text fontSize={12} pt={5}>
+                                    and many more...
+                                </Text>
                             </AboutCard>
                             <AboutCard
                                 color={useColorModeValue(
