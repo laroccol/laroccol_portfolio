@@ -74,7 +74,7 @@ export default function Contact() {
         setButtonText('Sending...')
 
         axios
-            .post('/api/sendmail', {
+            .post('/.netlify/functions/sendmail', {
                 name: name,
                 email: email,
                 message: message

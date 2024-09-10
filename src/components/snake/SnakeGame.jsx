@@ -71,7 +71,7 @@ class SnakeGame extends React.Component {
     }
 
     updateLeaderboard() {
-        axios.get('/api/getscores').then(({ data }) => {
+        axios.get('/.netlify/functions/getscores').then(({ data }) => {
             this.setState({ leaderboard: data.results })
         })
     }
@@ -415,7 +415,7 @@ class SnakeGame extends React.Component {
             localStorage.setItem('snakeHighScore', this.state.score)
 
             axios
-                .post('/api/submitscore', {
+                .post('/.netlify/functions/submitscore', {
                     name: this.state.name,
                     score: this.state.score
                 })
