@@ -416,8 +416,8 @@ class SnakeGame extends React.Component {
 
             axios
                 .post('/api/submitscore', {
-                    name: 'sloth',
-                    score: 5
+                    name: this.state.name,
+                    score: this.state.score
                 })
                 .catch((err) => console.error(err))
 
