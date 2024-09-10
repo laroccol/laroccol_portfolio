@@ -18,9 +18,15 @@ exports.handler = async (event, context) => {
 }
 
 async function submitScore(name, score) {
+    console.log('Starting submitScore function...')
+
     const uri = `mongodb+srv://admin:${process.env.MDBAP}@cluster0.vwg22.mongodb.net/portfolio?retryWrites=true&w=majority`
     await mongoose.connect(uri)
 
+    console.log('Connected to MongoDB...')
+
     const newScore = Score({ name: name, score: score })
     newScore.save()
+
+    console.log('Saved score: ', newScore)
 }
