@@ -26,7 +26,7 @@ async function submitScore(name, score) {
     console.log('Connected to MongoDB...')
 
     const newScore = Score({ name: name, score: score })
-    newScore.save()
+    await newScore.save()
 
     console.log('Saved score: ', newScore)
 }
